@@ -1,10 +1,10 @@
 import math
 
-hs = 750                          # spatial bandwidth (in meters)
+hs = 75                          # spatial bandwidth (in meters)
 ht = 5                            # temporal bandwidth (in days)
 
-inFile = open("AllCases2010.txt", "r")
-outFile = open("AllCases2010_stkde.txt", "w")
+inFile = open("data.txt", "r")
+outFile = open("data_stkde.txt", "w")
 ##inFile = [1,2,3]
 inFile2 = inFile
 inList = []
@@ -27,16 +27,16 @@ def densityF(x, y, t, xi, yi, ti, n, hs, ht):
     return spaceTimeKDE
 
 for line in inList:
-    xCoord = float(line.split("\t")[0])
-    yCoord = float(line.split("\t")[1])
-    tCoord = float(line.split("\t")[2])
+    xCoord = float(line.split(",")[0])
+    yCoord = float(line.split(",")[1])
+    tCoord = float(line.split(",")[2])
 
     density = 0.0
     
     for line2 in inList2:
-        xiCoord = float(line2.split("\t")[0])
-        yiCoord = float(line2.split("\t")[1])
-        tiCoord = float(line2.split("\t")[2])
+        xiCoord = float(line2.split(",")[0])
+        yiCoord = float(line2.split(",")[1])
+        tiCoord = float(line2.split(",")[2])
         
         nList = []
 
